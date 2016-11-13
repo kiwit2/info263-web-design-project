@@ -1,0 +1,179 @@
+DROP DATABASE AEOLUS;
+CREATE DATABASE AEOLUS;
+USE AEOLUS;
+
+CREATE TABLE CUSTOMER
+(CUSTOMER_NUM INT AUTO_INCREMENT PRIMARY KEY,
+CUSTOMER_NAME VARCHAR(30),
+EMAIL VARCHAR(30),
+ADDRESS VARCHAR(30),
+CITY VARCHAR(20),
+ZIP CHAR(4),
+COUNTRY VARCHAR(20) );
+
+CREATE TABLE PRODUCT
+(PRODUCT_NUM CHAR(3) PRIMARY KEY,
+PRODUCT_NAME VARCHAR(255),
+PRICE DECIMAL(8,2),
+CATEGORY VARCHAR (30),
+DESCRIPTION VARCHAR(1000),
+PICTURE_URL VARCHAR(100) );
+
+CREATE TABLE ORDERS
+(ORDER_NUM INT PRIMARY KEY,
+CUSTOMER_NUM INT,
+DATE DATE );
+
+CREATE TABLE ORDER_ITEM
+(ITEM_NUM INT AUTO_INCREMENT PRIMARY KEY,
+ORDER_NUM INT,
+PRODUCT_NUM CHAR(3),
+QTY INT,
+COMPLETED BOOL DEFAULT FALSE);
+
+
+
+INSERT INTO ORDER_ITEM (ORDER_NUM, PRODUCT_NUM, QTY, COMPLETED) VALUES (0, '001', 0, TRUE);
+
+INSERT INTO PRODUCT (PRODUCT_NUM, PRODUCT_NAME, PRICE, CATEGORY, DESCRIPTION, PICTURE_URL)
+VALUES ('001', '9443 Carbon Fiber Reinforced Self-tightening Propellers (Composite Hub, Black with Yellow Stripes)', '15.00', 
+'Exploration Drone Part', '94543 Self-tightening Propellers (with a composite hub) can be used 
+with Phantom 3/Phantom 2 series or Flame Wheel series platforms and the E310/E305/E300 
+tuned 
+propulsion systems.', './productList/inspireprops.jpg');
+
+INSERT INTO PRODUCT (PRODUCT_NUM, PRODUCT_NAME, PRICE, CATEGORY, DESCRIPTION, PICTURE_URL)
+VALUES ('002', 'DJI Inspire 1 Battery - TB47', '159.00', 'Exploration Drone Part', 
+'Get more flight time from your Inspire 1 by bringing along multiple flight batteries. 
+The DJI Inspire 1 battery has intelligent charging and capacity measurement for 
+safe and precise flying.
+
+Purchase the TB47 Battery (4500 mAh @ 22.2V) for an identical capacity battery to the original 
+flight battery included with your Inspire 1.', './productList/aspirebattery.jpg');
+
+INSERT INTO PRODUCT (PRODUCT_NUM, PRODUCT_NAME, PRICE, CATEGORY, DESCRIPTION, PICTURE_URL)
+VALUES ('003', 'DJI Zenmuse X3 Gimbal and Camera (Inspire 1 Part 40)', '550.00', 'Exploration Drone Part', 'The Zenmuse X3 from DJI features the same 4K camera and 3-axis gimbal that is included with ready-to-fly versions of the Inspire 1 quadcopter. It can be used with Inspire 1 - mounting toolessly - or works with th
+e Inspire 1 Camera Mount. The Camera Mount is a separately available handgrip that converts the Gimbal and Camera Unit into a stabilized handheld camera system for use closer to the ground. The gimbal and camera both power from the aircraft flight battery or from a battery that goes with the Camera Mount.
+
+Inspire 1 4K Camera
+The Inspire 1 Camera shoots 4K video at 24p and 30p, and can shoot HD video frame rates from 24p to 60p.
+ It features a 1/2.3" CMOS sensor with a 94-degree field of view (FOV) lens. This field of view works 
+out to about 20mm in 35mm equivalent, which gives you a wide but not extremely wide or fisheye framing - 
+while not as immersive as a fisheye, this FOV features less distortion and gives 
+the subject more emphasis', './productList/immersion 1.jpg');
+
+INSERT INTO PRODUCT (PRODUCT_NUM, PRODUCT_NAME, PRICE, CATEGORY, DESCRIPTION, PICTURE_URL)
+VALUES ('004', 'Vortex Mini Race Quad ARF (Race Motors)', '500.00', 'Racing Drone', 'Weight: ~350g without battery, or HD camera
+Power Requireme
+nts: 3s-4s LiPo (typical)
+ESCs: Full Custom, 12A cont. 16A peak, rotorSENSE, OneShot125
+Flight Camera: FatShark 600TVL CMOS (std), FatShark 700TVL CMOS, and 900TVL CCD optional
+HD Camera: GoPro Hero, Hero 3/4  (Optional power from onboard BEC), Mobius, Runcam
+Receiver Compatibility: CPPM Input, with S-Bus, and Spektrum™ Satellite converter cables optional
+Flight Time: Highly dependent upon battery, and flying style', './productList/vortex.jpg');
+
+INSERT INTO PRODUCT (PRODUCT_NUM, PRODUCT_NAME, PRICE, CATEGORY, DESCRIPTION, PICTURE_URL)
+VALUES ('005', 'Vortex Crash Kit - Carbon Fiber Parts', '48.99', 'Racing Drone Part', 'Contains the following parts: 
+
+1x Top Frame, Carbon Fiber
+1x GoPro anti-vibe plate, short, Carbon Fiber
+4x 12mm Carbon Fiber Arm
+4x Motor Protection
+1x Foam Battery Pad
+4x Screw HA2x8
+4x Screw HA2x6', './productList/frame.jpg');
+
+INSERT INTO PRODUCT (PRODUCT_NUM, PRODUCT_NAME, PRICE, CATEGORY, DESCRIPTION, PICTURE_URL)
+VALUES ('006', 'Vortex Crash Kit - Plastic Parts', '250.00', 'Racing Drone Part', 'These are parts most likely to break in a serious crash with the Vortex. 
+
+Included are all parts which mount the motors to the carbon fiber arms, the plastic pivot points, foldable arm clips, and all other plastic parts. 
+No carbon fiber parts are included in this crash kit, see Crash Kit #2 for these parts.
+
+Contains the following parts, all in injected plastic, with the exception of the front bumper, and the screws. 
+
+1x Front Bumper, FR4
+2x Side Plate
+8x Arm Clip
+4x Arm Pivot Top
+4x Arm Pivot Bottom
+4x Landing Bumper
+4x Landing Mount
+4x Motor Mount
+8x Hex Bushing
+1x Cam Support Base
+1x Cam Support Arm
+4x Dampener Pin
+4x Dampener Circlip
+4x Screw HA2x8
+4x Screw HA2x6', './productList/propellors.jpg');
+
+INSERT INTO PRODUCT (PRODUCT_NUM, PRODUCT_NAME, PRICE, CATEGORY, DESCRIPTION, PICTURE_URL)
+VALUES ('007', 'ImmersionRC 5.8 GHz SpiroNET Antenna Set RHCP (SMA Connector)', '39.95', 'Racing Drone Part', 'Details
+
+Unique design, not seen before in the FPV world. Far from the run of the mill basem
+ent production seen to date.
+Precision manufactured with very tight tolerances and 100% tested on a professional antenna tester (Rhode & Schwartz) to ensure maximum range and performance.
+Antenna uses a high quality semi-rigid cable, that can be bent to any angle and maintain its shape in any orientation.
+SMA Connection', './productList/antennae.jpg');
+
+INSERT INTO PRODUCT (PRODUCT_NUM, PRODUCT_NAME, PRICE, CATEGORY, DESCRIPTION, PICTURE_URL)
+VALUES ('008', 'ImmersionRC EzUHF Receiver, 8 channel lite', '89.99', 'Racing Drone Part', 'LRS RX Receiver compatible with the EzUHF TX. Includes Antenna and EzOSD Patch cable! Same great performance as the diversity receiver (infact a couple of dBs more sensitive), for a lower cost.
+
+Reliable FHSS Link (Frequency Hopping, Spread Spectrum)
+433MHz/70cm Ham band operation
+112dBm Sensitivity
+Bi-directional ready (contains onboard transmitter)
+Single Antenna configuration
+Ceramic filtered inputs, eliminates nearby high-power video Tx interference
+Mikrokopter mode, emit
+s PPM on a chosen channel
+Vehicle mode, couples two chosen channels (ideal for coupling steering servos on monster trucks)
+USB Connection for easy firmware upgrades, and advanced configuration', './productList/flightcontroller.jpg');
+
+INSERT INTO PRODUCT (PRODUCT_NUM, PRODUCT_NAME, PRICE, CATEGORY, DESCRIPTION, PICTURE_URL)
+VALUES ('009', 'ImmersionRC 5.8GHz 600mw Audio / Video Transmitter', '69.99', 'Racing Drone Part', 'This ImmersionRC Audio / Video Transmitters provides a clean and powerful transmission 100% compatible with all Fat Shark and Immersion RC products. Strong penetration and a locked in signal gives you the best picture on 5.8GHz all in a lightweight, powerful, 600mW 5.8GHz transmitter.
+
+Features
+
+600mW (28dBm, +/- 1dB) of clean output power
+SMA Antenna connector
+Frequencies: 5740, 5760, 5780, 5800, 5820, 5840, 5860MHz
+Onboard quiet switching regulator, powers 5v cameras (including HD versions)
+Input voltage range: 6 – 25v -- Our favorite feature which enables single 4s Lipo pack set-ups without t
+he need for a voltage regulator.
+Not affected by 2.4GHz R/C radios!', './productList/transmitter.jpg');
+
+INSERT INTO PRODUCT (PRODUCT_NUM, PRODUCT_NAME, PRICE, CATEGORY, DESCRIPTION, PICTURE_URL)
+VALUES ('010', 'FatShark PredatorV2 RTF FPV Headset System w/Camera and 5.8G TX', '279.99', 'Racing Drone Part', 'Predator V2 RTF FPV kit includes:
+•Predator VGA headset with integrated 5G8 receiver (no head tracking).
+• Zipper carry case, lens cleaning cloth, Fat Shark stickers
+• NTSC CMOS camera with 2.5mm wide angle (100 degree FOV) lens
+• 250mW, 7ch 5G8 transmitter• Filtered balance lead TX power supply
+• AV cable (for connected to external AV devices viewing/recording)
+• 2X 5G8 3dBi dipole antenna (transmitter and headset)
+• 1000mAh 7V4 battery pack with RC discharge adapter (charged via standard RC chargers)
+• Manual
+
+Specifications:
+• FOV 25 degree diagonal, full color VGA resolution LCD display
+• Interpupillary distance: 63.5mm (fixed)
+• NTSC/PAL auto select (interlaced)
+• Headset power consumption@ 7.4V: 140m
+A/290mA (wire/wireless)
+• NTSC CMOS camera with 2.5mm (100 degree FOV) lens
+• 250mW 7ch 5G8 transmitter (Fat Shark/IRC channels)
+• Combined onboard weight (cam, TX, antenna, adapter): 42g
+• Combined onboard power consumption (cam/TX): 400mA @ 7.4V nominal', './productList/fatsharkgoggles.jpg');
+
+
+
+
+INSERT INTO PRODUCT (PRODUCT_NUM, PRODUCT_NAME, PRICE, CATEGORY, DESCRIPTION, PICTURE_URL)
+
+VALUES ('011', 'DJI Inspire 1 Quadcopter with 4K Camera and 3-Axis Gimbal', '2545.99',
+ 'Exploration Drone', 'PRODUCT HIGHLIGHTS
+
+Capture 4K Video and 12MP Stills
+3-Axis Gimbal Stabilizes Camera
+Up to 1.2 Mile Radio Range
+GPS-Based Stabilization System', './productList/inspire1.jpg');

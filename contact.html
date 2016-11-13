@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Contact Aeolus</title>
+	<meta name="keywords" content="drone, drones, aeolus, exploration, racing, contact, contact aeolus" />
+	<meta name="description" content="Page which holds contact information and a method (form) to communicate with Aeolus directly." />
+	<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+	<script type="text/javascript" src="./contact/contact.js"></script>
+</head>
+
+<body>
+	<div id="header" class="container">
+		<div id="logo">
+			<h1>
+				<a href="./index.html">
+					<img src="./aeoluslogo.png" alt="Aeolus Group LTD" height="155" width="467" />
+				</a>
+			</h1>
+		</div>
+		<div id="menu">
+			<ul>
+				<li><a href="./index.html" accesskey="1" title="">Home</a></li>
+				<li><a href="./about.html" accesskey="2" title="">About</a></li>
+				<li><a href="products.php" accesskey="3" title="">Products</a></li>
+				<li class="current_page_item"><a href="./contact.html" accesskey="4" title="">Contact</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="wrapper">
+		<div id="page" class="container">			
+			<div class="form_container">
+				<img id="top" src="./contact/top.png" alt="" />				
+				<h1 class="form_heading">Contact Us</h1>
+				<div class="contact_form">
+				<form method="post" action="sendmessage.php" class="contact_form_class"> <!-- Contact Form -->
+				
+					<div> <!-- Form Description -->
+						<p>Send us a message and we will strive to reply within 48 hours.</p>
+					</div>					
+					<ul>
+						<li class="dotted_divisor"> <!-- First and Last Name -->
+							<div>
+								<label>First Name*&nbsp;</label>
+								<input id="first_name" name= "first_name" class="textbox_text" type="text" maxlength="25" size="14" value="" required />
+								<label>&nbsp;&nbsp;&nbsp;Last Name*</label>
+								<input id="last_name" name= "last_name" class="textbox_text" type="text" maxlength="25" size="14" value="" required />
+							</div>
+						</li> <!-- Email Address -->
+						<li>				
+							<div>
+								<label class="label_description">Email Address*</label>
+								<input id="email_address" name="email_address" class="textbox_text" type="email" maxlength="100" value="" required /> 
+							</div>
+						</li>
+						<li class="dotted_divisor"> <!-- Subject -->
+							<label class="label_description">Subject</label>
+							<div>
+								<input id="email_subject" name="email_subject" class="textbox_text" type="text" maxlength="255" value=""/> 
+							</div>
+						</li>
+						<li>
+							<!--<label class="label_description"></label>-->
+							<div>
+								<textarea id="email_body" name="email_body" class="textbox_text" rows="10" cols="10"></textarea>
+							</div>
+						</li>
+						<li id="submit_li" class="dotted_divisor">
+							<input class="submit_button" type="submit" name="submit" value="Submit" />
+						</li>
+					</ul>
+				</form>
+				</div>
+				
+				<img id="bottom" src="./contact/bottom.png" alt="" />
+				
+				<div id = "bottom_container" class="form_container">
+					<h1 class="form_heading">Alternatively</h1>
+					<div class="contact_form">				
+						<p>
+							Send us an email or give us a call. We are open 9am-5pm, Mon to Sat. 
+							<script type="text/javascript">
+								showEmail("senordsuloea", "moc.liamg");
+								document.write("   ");
+								showPhoneNumber("213-125-0080 :HP");
+							</script>					
+						</p>
+					</div>
+				</div>	
+
+				<h1 class="form_heading">Disclosure</h1>
+				
+				<div id="privacystatements">
+					<p>
+						<strong>Your information is not for sale:</strong> Information collected on users
+						will  only be used for the intended purpose only, (ie address to ship goods to) 
+						and will never be sold or shared with other users / companies. <strong> Disclosure 
+						of your information: </strong> Your information will not be disclosed unless required by law.				
+						<strong>Our use of Cookies:</strong> Cookies are text files containing small amounts of information which is downloaded to your 
+						hard disk or to your browser's memory when you log into our site. They allow us to remember your
+						preference settings, helping us enhance the usability and performance of our site.
+						<strong> Security:</strong> Aeolus is committed to protecting the security of your personal information. 
+						We use a variety of security technologies and procedures to help protect your personal information from unauthorized access, use or disclosure
+					</p>
+				</div>
+			</div>	
+		</div>
+	</div>
+	
+	
+	<div id="copyright" class="container">
+		<p>&copy; All rights reserved. | Content by Aeolus | CCS Skeleton by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+	</div>
+</body>
+</html>
